@@ -1,246 +1,318 @@
-# AI Pitch Deck Generator
+# 🚀 AI Pitch Deck Generator
 
-A comprehensive Generative AI-powered platform for creating professional startup pitch decks with intelligent content generation, visual design automation, and investor matching capabilities.
+**Professional AI-powered startup pitch deck creation platform**
 
-## 🚀 Features
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React-18+-blue.svg)](https://reactjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9+-blue.svg)](https://typescriptlang.org)
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://docker.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-### AI Content Generation
-- Multi-modal AI system using GPT-4, Claude, and custom fine-tuned models
-- Industry-specific content templates (SaaS, Fintech, Healthcare, E-commerce, AI/ML, Biotech)
-- Dynamic storytelling engine with compelling narratives
-- Automated competitor analysis and differentiation highlighting
-- Multi-language support with cultural adaptation
+## 🎯 Overview
 
-### Visual Design Automation
-- AI-powered design system with professional slide layouts
-- Automated color palette generation based on industry and brand guidelines
-- Dynamic chart and infographic creation
-- Brand consistency engine
-- Responsive design templates
+The AI Pitch Deck Generator is a comprehensive SaaS platform that automatically creates professional pitch decks for startups using advanced AI models. It combines market research, financial modeling, and content generation to produce investor-ready presentations.
 
-### Market Research Integration
-- Real-time market data from Crunchbase, PitchBook, and industry reports
-- Automated TAM/SAM/SOM calculations
-- Competitor landscape mapping
-- Trend analysis and market timing insights
-- Industry benchmark integration
+## ✨ Features
 
-### Financial Modeling Engine
-- Automated financial projection generation
-- Revenue model optimization
-- Unit economics calculator
-- Scenario modeling with sensitivity analysis
-- Valuation modeling and cap table scenarios
+### 🤖 AI-Powered Content Generation
+- **Industry-specific content** tailored to your startup's sector
+- **Dynamic storytelling** with compelling narratives
+- **Competitor analysis** and market positioning
+- **Professional slide layouts** with automated design
 
-### Pitch Optimization & Feedback
-- NLP-powered content analysis
-- Sentiment analysis and emotional impact scoring
-- A/B testing framework
-- Investor preference matching
-- Risk assessment and mitigation strategies
+### 📊 Market Research Integration
+- **Real-time market data** collection and analysis
+- **TAM/SAM/SOM calculations** for market sizing
+- **Competitor tracking** and competitive landscape analysis
+- **Industry trends** and growth projections
 
-### Multi-Format Export
-- PowerPoint generation with animations and speaker notes
-- PDF export with high-resolution graphics
-- Google Slides integration
-- Interactive web presentations
-- Mobile-optimized versions
+### 💰 Financial Modeling Engine
+- **Revenue projections** with multiple scenarios
+- **Unit economics** analysis (LTV/CAC, payback period)
+- **Valuation modeling** using industry-standard methods
+- **Financial metrics** and KPIs
 
-### Investor Matching Platform
-- Comprehensive investor database
-- AI-powered investor-startup matching
-- Investor outreach email generation
-- Due diligence preparation
+### 📄 Multi-Format Export System
+- **Microsoft PowerPoint** (.pptx) with animations
+- **PDF documents** for print and sharing
+- **Google Slides** for cloud collaboration
+- **Interactive web presentations** with embedded analytics
+
+### 🏢 Enterprise Features
+- **White-label solutions** for agencies and consultancies
+- **SSO authentication** and role-based access
+- **Advanced analytics** dashboard
+- **CRM integration** (Salesforce, HubSpot)
+- **API access** for developers
+- **Bulk generation** capabilities
 
 ## 🏗️ Architecture
 
 ```
-ai-pitch-deck-generator/
-├── backend/          # FastAPI backend with AI services
-├── frontend/         # React frontend with real-time collaboration
-├── ai-models/        # Custom AI models and fine-tuned systems
-├── export-engine/    # Multi-format export capabilities
-└── deployment/       # Kubernetes and cloud configurations
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │    Backend      │    │   Database      │
+│   (React/TS)    │◄──►│   (FastAPI)     │◄──►│  (PostgreSQL)   │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         │              ┌─────────────────┐              │
+         │              │   Background    │              │
+         │              │   Tasks         │              │
+         │              │   (Celery)      │              │
+         │              └─────────────────┘              │
+         │                       │                       │
+         │              ┌─────────────────┐              │
+         │              │     Cache       │              │
+         │              │    (Redis)      │              │
+         │              └─────────────────┘              │
+         │                       │                       │
+         │              ┌─────────────────┐              │
+         │              │   Monitoring    │              │
+         │              │ (Prometheus)    │              │
+         │              └─────────────────┘              │
+         │                       │                       │
+         │              ┌─────────────────┐              │
+         │              │   Reverse       │              │
+         │              │    Proxy        │              │
+         │              │   (Nginx)       │              │
+         │              └─────────────────┘              │
 ```
-
-## 🛠️ Technology Stack
-
-### Backend
-- **Framework**: FastAPI with async processing
-- **Database**: PostgreSQL with vector embeddings
-- **Cache**: Redis for templates and market data
-- **Task Queue**: Celery for AI generation processes
-- **AI Models**: GPT-4, Claude, custom fine-tuned models
-- **File Storage**: AWS S3 / Google Cloud Storage
-
-### Frontend
-- **Framework**: React with TypeScript
-- **State Management**: Redux Toolkit
-- **Real-time**: WebSocket for collaboration
-- **UI Components**: Material-UI / Tailwind CSS
-- **Charts**: D3.js / Chart.js for data visualization
-
-### AI & ML
-- **Content Generation**: OpenAI GPT-4, Anthropic Claude
-- **Design Generation**: Computer vision models
-- **Market Research**: Web scraping, sentiment analysis
-- **Financial Modeling**: Statistical models and benchmarks
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 - Python 3.9+
 - Node.js 18+
-- Docker and Docker Compose
-- PostgreSQL 13+
-- Redis 6+
+- Docker & Docker Compose
+- Git
 
-### Development Setup
-
-1. **Clone the repository**
+### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd ai-pitch-deck-generator
+git clone https://github.com/hridaygupta/ai-pitchdeck-generator.git
+cd ai-pitchdeck-generator
 ```
 
-2. **Backend Setup**
+### 2. Quick Demo (No Setup Required)
 ```bash
+# Start the demo server
 cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+python3 -m uvicorn test_server:app --host 0.0.0.0 --port 8000 --reload
+
+# Test the API
+python3 ../test_api.py
+
+# Run the demonstration
+python3 ../demo.py
 ```
 
-3. **Frontend Setup**
+### 3. Generate Your First Pitch Deck
 ```bash
-cd frontend
-npm install
+# Using the interactive script
+python3 generate_pitch_deck.py
+
+# Or using curl
+curl -X POST "http://localhost:8000/api/generate-pitch-deck" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Your Startup",
+    "industry": "SaaS",
+    "problem_statement": "Describe the problem you solve",
+    "solution_description": "Describe your solution",
+    "target_market": "Who you target",
+    "current_revenue": 50000,
+    "team_size": 5
+  }'
 ```
 
-4. **Environment Configuration**
+### 4. Full Production Deployment
 ```bash
-cp .env.example .env
-# Configure your API keys and database settings
-```
+# Copy environment variables
+cp env.example .env
 
-5. **Database Setup**
-```bash
-cd backend
-alembic upgrade head
-```
+# Edit .env with your API keys and configuration
+nano .env
 
-6. **Start Development Servers**
-```bash
-# Backend
-cd backend
-uvicorn src.api.main:app --reload
-
-# Frontend
-cd frontend
-npm start
-```
-
-### Docker Deployment
-
-```bash
+# Start all services
 docker-compose up -d
+
+# Access the platform
+# Frontend: http://localhost:3000
+# API: http://localhost:8000
+# Documentation: http://localhost:8000/docs
 ```
 
-## 📊 API Documentation
+## 📚 API Documentation
 
-Once the backend is running, visit:
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+### Interactive Documentation
+Visit `http://localhost:8000/docs` for the complete interactive API documentation.
 
-## 🎯 Core Workflows
+### Key Endpoints
 
-### 1. Pitch Deck Generation
-1. User inputs startup information and industry
-2. AI generates comprehensive market research
-3. Content generation for all slide sections
-4. Visual design automation with brand consistency
-5. Financial modeling and projections
-6. Export in multiple formats
+#### Generate Pitch Deck
+```http
+POST /api/generate-pitch-deck
+Content-Type: application/json
 
-### 2. Investor Matching
-1. Analyze startup profile and funding requirements
-2. Match with relevant investors from database
-3. Generate personalized outreach materials
-4. Prepare due diligence documentation
+{
+  "name": "Startup Name",
+  "industry": "Industry",
+  "problem_statement": "Problem description",
+  "solution_description": "Solution description",
+  "target_market": "Target market",
+  "current_revenue": 50000,
+  "team_size": 5
+}
+```
 
-### 3. Optimization & Feedback
-1. Content analysis for clarity and persuasiveness
-2. A/B testing different versions
-3. Investor preference matching
-4. Risk assessment and mitigation
+#### Get Templates
+```http
+GET /api/templates
+```
+
+#### Get Export Formats
+```http
+GET /api/export/formats
+```
+
+#### Health Check
+```http
+GET /health
+```
+
+## 🎨 Available Templates
+
+- **SaaS Startup Template** - 12 slides, modern design
+- **Fintech Startup Template** - 15 slides, professional layout
+- **Healthcare Startup Template** - 14 slides, medical focus
+- **E-commerce Startup Template** - 13 slides, retail optimized
+- **AI/ML Startup Template** - 16 slides, tech-focused
+
+## 📊 Generated Content
+
+Each pitch deck includes:
+
+1. **Title Slide** - Company branding and tagline
+2. **Problem Statement** - Market pain points and opportunities
+3. **Solution Overview** - Product/service description
+4. **Market Opportunity** - TAM/SAM/SOM analysis
+5. **Business Model** - Revenue streams and pricing
+6. **Traction & Metrics** - Growth indicators and KPIs
+7. **Team** - Key personnel and expertise
+8. **Financial Projections** - Revenue and growth forecasts
+9. **Funding Ask** - Investment requirements and use of funds
 
 ## 🔧 Configuration
 
 ### Environment Variables
-
 ```bash
-# AI Services
-OPENAI_API_KEY=your_openai_key
-ANTHROPIC_API_KEY=your_anthropic_key
-
 # Database
 DATABASE_URL=postgresql://user:password@localhost/pitchdeck
 
 # Redis
 REDIS_URL=redis://localhost:6379
 
+# AI APIs
+OPENAI_API_KEY=your_openai_key
+ANTHROPIC_API_KEY=your_anthropic_key
+
+# Security
+SECRET_KEY=your_secret_key
+JWT_ALGORITHM=HS256
+
+# CORS
+ALLOWED_ORIGINS=http://localhost:3000
+
 # File Storage
 AWS_ACCESS_KEY_ID=your_aws_key
 AWS_SECRET_ACCESS_KEY=your_aws_secret
-S3_BUCKET_NAME=your_bucket
-
-# External APIs
-CRUNCHBASE_API_KEY=your_crunchbase_key
-PITCHBOOK_API_KEY=your_pitchbook_key
+AWS_S3_BUCKET=your_bucket
 ```
 
-## 📈 Performance Metrics
+## 🐳 Docker Deployment
 
-- **Content Generation**: < 30 seconds per slide
-- **Design Generation**: < 15 seconds per slide
-- **Market Research**: < 60 seconds for comprehensive analysis
-- **Export Generation**: < 45 seconds for full deck
+### Development
+```bash
+docker-compose up --build
+```
 
-## 🔒 Security & Compliance
+### Production
+```bash
+docker-compose -f docker-compose.prod.yml up -d
+```
 
-- **Authentication**: JWT-based with refresh tokens
-- **Authorization**: Role-based access control (RBAC)
-- **Data Encryption**: AES-256 for sensitive data
-- **API Security**: Rate limiting and input validation
-- **Compliance**: GDPR, SOC 2, and enterprise security standards
+## 📈 Monitoring
 
-## 🤝 Contributing
+The platform includes comprehensive monitoring:
+
+- **Prometheus** - Metrics collection
+- **Grafana** - Visualization dashboards
+- **Structured logging** - Application logs
+- **Health checks** - Service monitoring
+
+## 🔒 Security Features
+
+- **JWT Authentication** - Secure API access
+- **Rate Limiting** - API abuse prevention
+- **CORS Protection** - Cross-origin security
+- **Input Validation** - Data sanitization
+- **SQL Injection Protection** - Database security
+
+## 🧪 Testing
+
+```bash
+# Run API tests
+python3 test_api.py
+
+# Run comprehensive tests
+python3 -m pytest tests/
+
+# Run with coverage
+python3 -m pytest --cov=src tests/
+```
+
+## 📝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
+## 🤝 Support
 
-- **Documentation**: [docs.ai-pitch-deck.com](https://docs.ai-pitch-deck.com)
-- **Issues**: [GitHub Issues](https://github.com/ai-pitch-deck/issues)
-- **Email**: support@ai-pitch-deck.com
+- **Documentation**: [API Docs](http://localhost:8000/docs)
+- **Issues**: [GitHub Issues](https://github.com/hridaygupta/ai-pitchdeck-generator/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/hridaygupta/ai-pitchdeck-generator/discussions)
 
-## 🏆 Enterprise Features
+## 🚀 Roadmap
 
-- **White-label Solution**: Custom branding for accelerators and VCs
-- **Bulk Generation**: Portfolio company management
-- **Analytics Dashboard**: Performance tracking and insights
-- **API Integration**: CRM and deal flow management
-- **SSO Integration**: Enterprise authentication
-- **Custom Templates**: Industry-specific designs
+- [ ] **Advanced AI Models** - GPT-4, Claude, and custom fine-tuned models
+- [ ] **Real-time Collaboration** - Multi-user editing and commenting
+- [ ] **Advanced Analytics** - Pitch deck performance tracking
+- [ ] **Mobile App** - iOS and Android applications
+- [ ] **Integration APIs** - CRM, marketing automation, and analytics tools
+- [ ] **White-label Platform** - Custom branding and domain support
+- [ ] **Enterprise SSO** - SAML, OAuth, and LDAP integration
+- [ ] **Advanced Export** - Video presentations and interactive demos
+
+## 🙏 Acknowledgments
+
+- **FastAPI** - Modern web framework
+- **React** - Frontend library
+- **OpenAI** - AI content generation
+- **Anthropic** - Advanced language models
+- **PostgreSQL** - Reliable database
+- **Redis** - High-performance caching
+- **Docker** - Containerization platform
 
 ---
 
-Built with ❤️ by the AI Pitch Deck Generator Team 
+**Built with ❤️ for entrepreneurs and startups worldwide**
+
+[![GitHub stars](https://img.shields.io/github/stars/hridaygupta/ai-pitchdeck-generator?style=social)](https://github.com/hridaygupta/ai-pitchdeck-generator)
+[![GitHub forks](https://img.shields.io/github/forks/hridaygupta/ai-pitchdeck-generator?style=social)](https://github.com/hridaygupta/ai-pitchdeck-generator)
+[![GitHub issues](https://img.shields.io/github/issues/hridaygupta/ai-pitchdeck-generator)](https://github.com/hridaygupta/ai-pitchdeck-generator/issues) 
